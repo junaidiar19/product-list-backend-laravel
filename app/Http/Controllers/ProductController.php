@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('category')->get();
 
         return response()->json([
             'message' => 'Products retrieved successfully',
